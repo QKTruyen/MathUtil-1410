@@ -13,4 +13,4 @@ at FPT University, HCM Campus
 1. [GitHub](https://github.com/QKTruyen/MathUtil-1410.git)
 2. [Facebook](Không có đâu nha!)
 
-#### 2020 by QKTruyen nhe!
+#### 2020 by QKTruyen nhe nha!
