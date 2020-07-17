@@ -18,6 +18,7 @@ public class MathUtil {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("5! = " + computeFactorial(5));
+        // đoạn code test hàm bằng tay, manual 
     }
     
 }

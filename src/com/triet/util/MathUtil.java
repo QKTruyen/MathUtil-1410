@@ -17,9 +17,9 @@ public class MathUtil {
     public static long computeFactorial(int n){
         long result = 1;
         for (int i = 1; i <= n ; i++){
-            result *= 1;
+            result *= i;
         }
-        return result;
+        return result;   
     }
     
 }

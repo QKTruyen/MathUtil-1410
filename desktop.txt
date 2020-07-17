@@ -1,0 +1,79 @@
+<!--                    <td>
+                        <a href="MainController?btnAction=Delete&txtUserID=<%= dto.getUserID()%>&txtSearch=<%= search%>">Delete</a>
+                    </td>
+                    <td>
+                        <form action="MainController">
+                            <input type="hidden" name="txtUserID" value="<%= dto.getUserID() %>"/>
+                            <input type="hidden" name="txtFullName" value="<%= dto.getFullName()%>"/>
+                            <input type="hidden" name="txtRoleID" value="<%= dto.getRoleID() %>"/>
+                            <input type="hidden" name="txtSearch" value="<%= search %>"/>
+                            <input type="submit" name="btnAction" value="Update Page"/>
+                        </form>
+                    </td>-->
+
+<%
+            String searchMedicine = request.getParameter("txtSearchMedicine");
+            if (searchMedicine == null) {
+                searchMedicine = "";
+            }
+        %>
+        <form action="MainController">
+            Search <input type="text" name="txtSearchMedicine" value="<%= searchMedicine%>"/>
+            <input type="submit" value="Search Med" name="btnAction"/>
+        </form>
+        <%
+            List<MedicineDTO> listMedicine = (List<MedicineDTO>) request.getAttribute("LIST_MEDICINE");
+            if (listMedicine != null) {
+                if (!listMedicine.isEmpty()) {
+        %> 
+        
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <%  int count = 1;
+                    for (MedicineDTO dto : listMedicine) {
+                %>
+                <tr>
+                    <td>
+                        <%= count++%>
+                    </td>
+                    <td>
+                        <%= dto.getProductID()%>
+                    </td>
+                    <td>
+                        <%= dto.getProductName()%>
+                    </td>
+                    <td>
+                        <%= dto.getDescription()%>
+                    </td>
+                    <td>
+                        <%= dto.getPrice()%>
+                    </td>
+                    <td>
+                        <%= dto.getQuantity()%>
+                    </td>
+                    <td>
+                        <%= dto.isStatus()%>
+                    </td>
+                   
+                </tr>
+                <%
+                    }
+                %>
+            </tbody>
+        </table>
+        <%
+                }
+            }
+        %>  
