@@ -15,7 +15,11 @@ public class MathUtil {
     //tính n!= 1,2,3,.... vì n! tăng kết quả rất nhanh tràng int nên dùng long
     //15! trở lại
     public static long computeFactorial(int n){
+        if (n<0 || n>15)
+            throw new IllegalArgumentException("Invalid argument. n must be >=0 & <= 15");
+        
         long result = 1;
+        
         for (int i = 1; i <= n ; i++){
             result *= i;
         }
